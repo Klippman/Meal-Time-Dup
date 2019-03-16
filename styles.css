@@ -1,0 +1,44 @@
+/* * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} */
+
+/* create recipe button animation (index.html) */
+button#create_recipe {
+    border: 0;
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0;
+}
+
+#create_recipe a:link, a:visited {
+    text-decoration: none;
+}
+
+#create_recipe a:hover {
+    color: hotpink;
+}
+
+
+/* Remove button styling (edit.html) */
+.remove_button {
+    background-color: red;
+    color: yellowgreen;
+}
+
+.remove_button:focus {
+    background-color: yellowgreen;
+    color: red;
+    outline: none;
+}
+
+/* recipe names/links (index.html) */
+#recipes a:link, a:visited {
+    text-decoration: none;
+}
+
+#recipes a:hover {
+    color: hotpink;
+    text-decoration: underline overline;
+}
