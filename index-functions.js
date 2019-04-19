@@ -1,5 +1,5 @@
 // Read existing recipes in localStorage
-const getSavedRecipes = () => {
+let getSavedRecipes = () => {
     const recipesJSON = localStorage.getItem('recipes')
         try {
             return recipesJSON ? JSON.parse(recipesJSON) : []
@@ -9,7 +9,7 @@ const getSavedRecipes = () => {
 }
 
 // Save recipes to localStorage
-const saveRecipes = (recipes) => {
+let saveRecipes = (recipes) => {
     localStorage.setItem('recipes', JSON.stringify(recipes))
 }
 

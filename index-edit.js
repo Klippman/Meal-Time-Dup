@@ -1,7 +1,7 @@
-const textAreaEl = document.querySelector('#instruction_body')
-const recipeId = location.hash.substring(1)
-const recipes = getSavedRecipes()
-const recipe = recipes.find((recipe) => {
+let textAreaEl = document.querySelector('#instruction_body')
+let recipeId = location.hash.substring(1)
+let recipes = getSavedRecipes()
+let recipe = recipes.find((recipe) => {
     return recipe.id === recipeId
 })
 
@@ -24,14 +24,15 @@ textAreaEl.addEventListener('input', (e) => {
 // Add a new ingredient
 document.querySelector('#ingredient_form').addEventListener('submit', (e) => {
     const ingredient = e.target.elements.addIngredient.value.trim()
-    e.preventDefault()
     recipe.ingredients.push({
         name: ingredient,
         completed: false
     })
-    e.target.elements.addIngredient.value = ''
     saveRecipes(recipes)
-    renderRecipes(recipes)
+    e.target.elements.addIngredient.value = ''
+    
+    recipes = getSavedRecipes()
+    ingredientsRenderPage(recipe.ingredients)
 })
 
 // Toggle completed 
@@ -53,14 +54,17 @@ const generateIngredientDOM = (ingredient) => {
     return ingredientName
 }
 
+
+
 const filteredIngredients = recipe.ingredients.filter((ingredient) => {
     const hideCompletedMatch = !filters.hideCompleted || !ingredient.completed
 
         return hideCompletedMatch 
 })
 
-document.querySelector('#ingredients').innerHTML = ''
-
+const ingredientsRenderPage = (filteredIngredients) => {
+    const ingredientContainer = document.querySelector('#ingredients')
+    ingredientContainer.innerHTML = ''
     filteredIngredients.map(ingredient => {
         // Create a container for the ingredients
         const ingredientEl = document.createElement('p')
@@ -68,7 +72,7 @@ document.querySelector('#ingredients').innerHTML = ''
         const checkBox = document.createElement('input')
         const removeEl = document.createElement('button')
     
-        document.querySelector('#ingredients').appendChild(ingredientEl)
+        ingredientContainer.appendChild(ingredientEl)
     
         // Setup checkbox
         checkBox.checked = ingredient.completed
@@ -76,7 +80,7 @@ document.querySelector('#ingredients').innerHTML = ''
         checkBox.addEventListener('change', function () {
             toggleIngredient(ingredient.id)
             saveRecipes(recipes)
-            renderRecipes(recipes)
+            // renderRecipes(recipes)
         })
 
         // Setup remove button
@@ -85,7 +89,7 @@ document.querySelector('#ingredients').innerHTML = ''
         removeEl.addEventListener('click', (e) => {
             removeIngredient(ingredient.name)
             saveRecipes(recipes)
-            renderRecipes(recipes)
+            // renderRecipes(recipes)
         })
 
         // Add all elements to the ingredientEl as you create them
@@ -93,4 +97,6 @@ document.querySelector('#ingredients').innerHTML = ''
         ingredientEl.appendChild(ingredientName)
         ingredientEl.appendChild(checkBox)
     })
+}
 
+ingredientsRenderPage(filteredIngredients)
