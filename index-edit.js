@@ -28,8 +28,8 @@ document.querySelector('#ingredient_form').addEventListener('submit', (e) => {
         name: ingredient,
         completed: false
     })
-    saveRecipes(recipes)
     e.target.elements.addIngredient.value = ''
+    saveRecipes(recipes)
     
     recipes = getSavedRecipes()
     ingredientsRenderPage(recipe.ingredients)
@@ -77,10 +77,10 @@ const ingredientsRenderPage = (filteredIngredients) => {
         // Setup checkbox
         checkBox.checked = ingredient.completed
         checkBox.setAttribute('type', 'checkbox')
-        checkBox.addEventListener('change', function () {
+        checkBox.addEventListener('change', () => {
             toggleIngredient(ingredient.id)
             saveRecipes(recipes)
-            // renderRecipes(recipes)
+            renderRecipes(recipes)
         })
 
         // Setup remove button
@@ -89,7 +89,7 @@ const ingredientsRenderPage = (filteredIngredients) => {
         removeEl.addEventListener('click', (e) => {
             removeIngredient(ingredient.name)
             saveRecipes(recipes)
-            // renderRecipes(recipes)
+            renderRecipes(recipes)
         })
 
         // Add all elements to the ingredientEl as you create them
