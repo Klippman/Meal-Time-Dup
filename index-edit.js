@@ -55,7 +55,6 @@ const generateIngredientDOM = (ingredient) => {
 }
 
 
-
 const filteredIngredients = recipe.ingredients.filter((ingredient) => {
     const hideCompletedMatch = !filters.hideCompleted || !ingredient.completed
 
@@ -86,7 +85,7 @@ const ingredientsRenderPage = (filteredIngredients) => {
         // Setup remove button
         removeEl.textContent = 'Remove'
         removeEl.classList.add('remove_button')
-        removeEl.addEventListener('click', (e) => {
+        removeEl.addEventListener('click', () => {
             removeIngredient(ingredient.name)
             saveRecipes(recipes)
             renderRecipes(recipes)
