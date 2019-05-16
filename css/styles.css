@@ -1,8 +1,23 @@
-/* * {
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-} */
+}
+
+html {
+    font-size: 20px;
+}
+
+h1 {
+    font-family: 'Taviraj', serif;
+    font-size: 50px;
+    text-align: center;
+}
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
 
 /* create recipe button animation (index.html) */
 button#create_recipe {
@@ -10,6 +25,14 @@ button#create_recipe {
     font-family: inherit;
     font-size: 100%;
     padding: 0;
+}
+
+.container-index {
+    left: 50%;
+    position: absolute;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    width: 1140px;
 }
 
 #create_recipe a:link, a:visited {
@@ -20,14 +43,35 @@ button#create_recipe {
     color: hotpink;
 }
 
-
-/* Remove button styling (edit.html) */
-.remove_button {
-    background-color: red;
-    color: yellowgreen;
+.filter-field-div {
+    text-align: center;
 }
 
-.remove_button:focus {
+/* .recipe-field-div {
+    text-align: center;
+} */
+
+#recipes {
+    text-align: center;
+}
+
+#recipe_form {
+    text-align: center;
+}
+
+
+/* Remove button styling ingredients (edit.html) */
+label {
+    padding: 0px 6px;
+}
+
+button.remove_button {
+    background-color: red;
+    color: yellowgreen;
+    padding: 2px 2px 0px 2px;
+}
+
+button.remove_button:focus {
     background-color: yellowgreen;
     color: red;
     outline: none;
