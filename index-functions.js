@@ -51,15 +51,15 @@ const renderRecipes = (recipes, filters) => {
         recipes.map(recipe => {
             const recipeEl = document.createElement('p')
             const recipeName = document.createElement('a')
-            const deleteEl = document.createElement('button')
+            const deleteEl = document.createElement('i')
 
             recipeElContainer.appendChild(recipeEl)
 
             recipeName.textContent = recipe.name
             recipeName.setAttribute('href', `/edit.html#${recipe.id}`)
 
-            deleteEl.textContent = 'Remove'
-            deleteEl.classList.add('delete_button')
+            // deleteEl.textContent = 'Remove'
+            deleteEl.classList.add('ion-close-circled')
             deleteEl.addEventListener('click', (id) => {
                 deleteRecipe(recipe.id)
                 saveRecipes(recipes)

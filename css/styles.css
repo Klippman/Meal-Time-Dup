@@ -19,7 +19,15 @@ h1 {
     margin: 0 auto;
 }
 
-/* create recipe button animation (index.html) */
+/* create recipe page (index.html) */
+
+body.index-page {
+    background-image: url(/images/food4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
 button#create_recipe {
     border: 0;
     font-family: inherit;
@@ -35,6 +43,10 @@ button#create_recipe {
     width: 1140px;
 }
 
+#create_recipe {
+    background-color: initial;
+}
+
 #create_recipe a:link, a:visited {
     text-decoration: none;
 }
@@ -47,12 +59,40 @@ button#create_recipe {
     text-align: center;
 }
 
-/* .recipe-field-div {
-    text-align: center;
-} */
+input#input {
+    background-color: initial;
+}
+
+input[type=text] {
+    background-color: initial;
+}
 
 #recipes {
+    margin-top: 6%;
     text-align: center;
+}
+
+#recipes p {
+    margin-bottom: 2%;
+    margin-left: 33%;
+    position: relative;
+    width: 400px;
+}
+
+#recipes p i {
+    color: dodgerblue;
+    left: 30%;
+    border-bottom: 2px solid black;
+    position: absolute;
+}
+
+#recipes p i:hover {
+    cursor: pointer;
+    transform: scale(1.10);
+}
+
+#recipes p a {
+    border-bottom: 2px solid black;
 }
 
 #recipe_form {
@@ -61,6 +101,14 @@ button#create_recipe {
 
 
 /* Remove button styling ingredients (edit.html) */
+
+body.edit-page {
+    background-image: url(/images/food4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
 label {
     padding: 0px 6px;
 }
