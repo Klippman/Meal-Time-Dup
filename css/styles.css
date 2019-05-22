@@ -12,11 +12,17 @@ h1 {
     font-family: 'Taviraj', serif;
     font-size: 50px;
     text-align: center;
+    text-shadow:
+		-1px -1px 0 hotpink,
+		1px -1px 0 hotpink,
+		-1px 1px 0 hotpink,
+		1px 1px 0 hotpink;
 }
 
 .row {
     max-width: 1140px;
     margin: 0 auto;
+    position: relative;
 }
 
 /* create recipe page (index.html) */
@@ -95,6 +101,10 @@ input[type=text] {
     border-bottom: 2px solid black;
 }
 
+#recipes p a:hover {
+    border-bottom: 2px solid hotpink;
+}
+
 #recipe_form {
     text-align: center;
 }
@@ -125,6 +135,23 @@ button.remove_button:focus {
     outline: none;
 }
 
+.hide-completed-parent {
+    position: absolute;
+}
+
+.ingredient-parent {
+    left: 30%;
+    position: absolute;
+}
+
+.instruction-box {
+    text-align: center;
+}
+
+.instruction-box span a i {
+    font-size: 300%;
+}
+
 /* recipe names/links (index.html) */
 #recipes a:link, a:visited {
     text-decoration: none;
@@ -132,5 +159,16 @@ button.remove_button:focus {
 
 #recipes a:hover {
     color: hotpink;
-    text-decoration: underline overline;
+    text-decoration: overline;
+}
+
+#instruction_body {
+    background-color: initial;
+    width: 50%;
+}
+
+.row span a {
+    left: 10%;
+    position: absolute;
+    top: 36%;
 }

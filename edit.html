@@ -8,6 +8,8 @@
         <link rel="stylesheet" type="text/css" href="css/styles.css">
         <link rel="stylesheet" type="text/css" href="css/grid.css">
         <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" href="css/ionicons.min.css">
+        <link rel="stylesheet" href="css/hover-min.css">
         <title>Document</title>
     </head>
     <body class="edit-page">
@@ -18,21 +20,31 @@
                     
                 </div>
             </div>
-            <span>
-                <a href="/index.html">Home</a>
-            </span>
-            <div id="text-area">
-                <textarea id="instruction_body" cols="30" rows="10" placeholder="Instructions..."></textarea>
+            <div class="row">
+                <div class="instruction-box">
+                    <span>
+                        <a class="hvr-float-shadow" href="/index.html"><i class="ion-arrow-left-a"></i></a>
+                    </span>
+                    <div id="text-area">
+                        <textarea id="instruction_body" cols="30" rows="10" placeholder="Instructions..."></textarea>
+                    </div>
+                </div>
             </div>
-            <form id="ingredient_form">
-                <input id="ingredient_field" type="text" placeholder="Add Ingredient" name="addIngredient">
-                <button>Add Ingredient</button>
-            </form>
-            <label>
-                Hide Completed<input type="checkbox" id="hide-completed"> 
-            </label>
-            <div id="ingredients">
-                
+            <div class="row">
+                <div class="ingredient-parent">
+                    <form id="ingredient_form">
+                        <input id="ingredient_field" type="text" placeholder="Add Ingredient" name="addIngredient">
+                        <button>Add Ingredient</button>
+                    </form>
+                </div>
+                <div class="hide-completed-parent">
+                    <label>
+                        Hide Completed<input type="checkbox" id="hide-completed"> 
+                    </label>
+                    <div id="ingredients">
+                        
+                    </div>
+                </div>
             </div>
         </div>
         <script src="index-functions.js"></script>
