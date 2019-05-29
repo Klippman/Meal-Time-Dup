@@ -21,7 +21,7 @@ h1 {
 
 .row {
     max-width: 1140px;
-    margin: 0 auto;
+    margin: 2% auto;
     position: relative;
 }
 
@@ -133,15 +133,6 @@ button.remove_button:focus {
     background-color: yellowgreen;
     color: red;
     outline: none;
-}
-
-.hide-completed-parent {
-    position: absolute;
-}
-
-.ingredient-parent {
-    left: 30%;
-    position: absolute;
 }
 
 .instruction-box {
