@@ -135,6 +135,14 @@ button.remove_button:focus {
     outline: none;
 }
 
+#hide-completed {
+    text-align: center;
+}
+
+#ingredient-form {
+    text-align: center;
+}
+
 .instruction-box {
     text-align: center;
 }
