@@ -119,27 +119,58 @@ body.edit-page {
     height: 100vh;
 }
 
-label {
+.ingredient-parent #ingredients label {    /* Ingredient label */
+    left: 46%;
     padding: 0px 6px;
+    position: absolute;
 }
 
-button.remove_button {
-    background-color: red;
-    color: yellowgreen;
+button.ion-close-circled {
+    background-color: initial;
+    border: none;
+    color: dodgerblue;
+    left: 43%;
     padding: 2px 2px 0px 2px;
+    position: absolute;
 }
 
-button.remove_button:focus {
-    background-color: yellowgreen;
-    color: red;
+button.ion-close-circled:focus,
+button.ion-close-circled:hover {
+    cursor: pointer;
     outline: none;
+    transform: scale(1.10);
 }
 
 #hide-completed {
     text-align: center;
 }
 
+#hide-completed input[type="checkbox"] {
+    margin-left: 5px;
+}
+
 #ingredient-form {
+    text-align: center;
+}
+
+#ingredients {
+    display: inline-block;
+}
+
+#ingredients p {
+    border: groove 3px skyblue;
+    border-radius: 25px;
+    margin-bottom: 2px;
+    text-align: center;
+    width: 450px;
+}
+
+input.check-box {
+    left: 46%;
+    position: relative;
+}
+
+.ingredient-parent {
     text-align: center;
 }
 
@@ -149,6 +180,14 @@ button.remove_button:focus {
 
 .instruction-box span a i {
     font-size: 300%;
+}
+
+textarea {
+    border: groove 5px hotpink;
+}
+
+textarea:focus {
+    outline: none;
 }
 
 /* recipe names/links (index.html) */

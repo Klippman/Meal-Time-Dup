@@ -22,7 +22,7 @@ textAreaEl.addEventListener('input', (e) => {
 })
 
 // Add a new ingredient
-document.querySelector('#ingredient_form').addEventListener('submit', (e) => {
+document.querySelector('#ingredient-form').addEventListener('submit', (e) => {
     const ingredient = e.target.elements.addIngredient.value.trim()
     recipe.ingredients.push({
         name: ingredient,
@@ -76,6 +76,7 @@ const ingredientsRenderPage = (filteredIngredients) => {
         // Setup checkbox
         checkBox.checked = ingredient.completed
         checkBox.setAttribute('type', 'checkbox')
+        checkBox.classList.add('check-box')
         checkBox.addEventListener('change', () => {
             toggleIngredient(ingredient.id)
             saveRecipes(recipes)
@@ -83,8 +84,7 @@ const ingredientsRenderPage = (filteredIngredients) => {
         })
 
         // Setup remove button
-        removeEl.textContent = 'Remove'
-        removeEl.classList.add('remove_button')
+        removeEl.classList.add('ion-close-circled')
         removeEl.addEventListener('click', () => {
             removeIngredient(ingredient.name)
             saveRecipes(recipes)
