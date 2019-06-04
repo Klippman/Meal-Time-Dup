@@ -34,12 +34,12 @@ body.index-page {
     height: 100vh;
 }
 
-button#create_recipe {
+/* button#create_recipe {
     border: 0;
     font-family: inherit;
     font-size: 100%;
     padding: 0;
-}
+} */
 
 .container-index {
     left: 50%;
@@ -86,7 +86,7 @@ input[type=text] {
 }
 
 #recipes p i {
-    color: dodgerblue;
+    color: #269CE9;
     left: 30%;
     border-bottom: 2px solid black;
     position: absolute;
@@ -110,7 +110,7 @@ input[type=text] {
 }
 
 
-/* Remove button styling ingredients (edit.html) */
+/* Ingredient and instructions page (edit.html) */
 
 body.edit-page {
     background-image: url(/images/food4.jpg);
@@ -183,11 +183,23 @@ input.check-box {
 }
 
 textarea {
+    background-color: initial;
     border: groove 5px hotpink;
+    width: 50%;
 }
 
 textarea:focus {
+    border: groove 5px #269CE9;
     outline: none;
+}
+
+textarea::placeholder {
+    color: #269CE9;
+    font-family: 'Taviraj', serif;
+}
+
+textarea:focus::placeholder {
+    color: hotpink;
 }
 
 /* recipe names/links (index.html) */
@@ -200,13 +212,73 @@ textarea:focus {
     text-decoration: overline;
 }
 
-#instruction_body {
-    background-color: initial;
-    width: 50%;
-}
-
 .row span a {
     left: 10%;
     position: absolute;
     top: 36%;
+}
+
+
+/* Buttons */
+
+button.recipe-ingredient {
+    background-color: #269CE9;
+    display: inline-block;
+    zoom: 1;
+    padding: 6px 20px 2px 20px;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid #bbb;
+    overflow: visible;
+    font: bold 14px arial, helvetica, sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #555;
+    
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)));
+    background-image: -webkit-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+    background-image: -moz-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+    background-image: -ms-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+    background-image: -o-linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+    background-image: linear-gradient(top, rgba(255,255,255,1), rgba(255,255,255,0));
+    
+    -webkit-transition: background-color .2s ease-out;
+    -moz-transition: background-color .2s ease-out;
+    -ms-transition: background-color .2s ease-out;
+    -o-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    background-clip: padding-box; /* Fix bleeding */
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
+    text-shadow: 0 1px 0 rgba(255,255,255, .9);
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+button.recipe-ingredient {
+    background-color: #269CE9;
+    border-color: #269CE9;
+}
+
+button.recipe-ingredient:hover {
+    background-color: #70B9E8;
+}
+
+button.recipe-ingredient:active {
+    background: #269CE9;
+}
+
+button.recipe-ingredient[disabled], button.recipe-ingredient[disabled]:hover, button.recipe-ingredient[disabled]:active {
+    border-color: #269CE9;
+    background: #269CE9;
+    color: #93D5FF;
 }
