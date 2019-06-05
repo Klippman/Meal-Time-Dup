@@ -89,6 +89,7 @@ input[type=text] {
     color: #269CE9;
     left: 30%;
     border-bottom: 2px solid black;
+    border-radius: 6px;
     position: absolute;
 }
 
@@ -99,6 +100,7 @@ input[type=text] {
 
 #recipes p a {
     border-bottom: 2px solid black;
+    border-radius: 6px;
 }
 
 #recipes p a:hover {
@@ -128,7 +130,7 @@ body.edit-page {
 button.ion-close-circled {
     background-color: initial;
     border: none;
-    color: dodgerblue;
+    color: #269CE9;
     left: 43%;
     padding: 2px 2px 0px 2px;
     position: absolute;
@@ -158,9 +160,9 @@ button.ion-close-circled:hover {
 }
 
 #ingredients p {
-    border: groove 3px skyblue;
+    border-bottom: groove 3px #269CE9;
     border-radius: 25px;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
     text-align: center;
     width: 450px;
 }
@@ -208,8 +210,7 @@ textarea:focus::placeholder {
 }
 
 #recipes a:hover {
-    color: hotpink;
-    text-decoration: overline;
+    border-top: 2px solid hotpink;
 }
 
 .row span a {
